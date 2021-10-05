@@ -18,14 +18,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class Usuario implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String email;
 	private String senha;
-	
+
 	// Carrega usuario e a lista
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Perfil> perfis = new ArrayList<>();
@@ -85,6 +85,14 @@ public class Usuario implements UserDetails {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public List<Perfil> getPerfis() {
+		return perfis;
+	}
+
+	public void setPerfis(List<Perfil> perfis) {
+		this.perfis = perfis;
 	}
 
 	// Metodos da interface que precisam ser configurados de acordo com nossa classe
