@@ -14,10 +14,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableCaching
 // Para habilitarmos o SpringFox Swagger 2 (para documentacao automatica)
 @EnableSwagger2
-public class ForumApplication {
+// SpringBootServletInitializer seria para fazer a build em war
+public class ForumApplication /*extends SpringBootServletInitializer*/{
 
 	public static void main(String[] args) {
 		SpringApplication.run(ForumApplication.class, args);
 	}
  
+	/* Para build em war
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(ForumApplication.class);
+	}
+	 */
+	
 }

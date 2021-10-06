@@ -45,6 +45,7 @@ public class CursoRepositoryTest {
 		String nome = "HTML 5";
 		
 		em.persist(categoria);
+		em.persist(html5);
 
 		Curso curso = cursoRepository.findByNome(nome);
 
